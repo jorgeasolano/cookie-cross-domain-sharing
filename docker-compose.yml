@@ -1,0 +1,67 @@
+version: "3.9"
+services:
+  app-frontend:
+    build:
+      context: ./app
+    networks:
+      - public
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/app
+      - /app/node_modules
+    restart: always
+  app-api:
+    build:
+      context: ./app-api
+    networks:
+      - public
+      - private
+    ports:
+      - 3001:3000
+    volumes:
+      - ./app-api:/app
+      - /app/node_modules
+  idp-frontend:
+    build:
+      context: ./idp
+    networks:
+      - public
+    ports:
+      - 3002:3000
+    volumes:
+      - ./idp:/app
+      - /app/node_modules
+    restart: always
+  idp-api:
+    build:
+      context: ./idp-api
+    networks:
+      - public
+      - private
+    ports:
+      - 3003:3000
+    volumes:
+      - ./idp-api:/app
+      - /app/node_modules
+
+  
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - public
+      - private
+    depends_on:
+      - app-frontend
+      - app-api
+    restart: always
+networks:
+  public:
+  private:
+
+

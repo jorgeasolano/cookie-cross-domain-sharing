@@ -46,15 +46,32 @@ After setting up the domains, you need to build and run the Docker environment.
 
 Docker Compose will build the images and start the containers as specified in the `docker-compose.yml` file. 
 
+
+## Step 3: Navigate 
+https://www.idp.com
+
+
+
 ## Diagram Reference
 
 For a visual representation of the overall system architecture, please refer to `diagram.png` in the project directory.
 ![Screenshot](diagram.png)
 
 
-## Navigate
+## SameSite=None Browser Support - July 28, 2023   
+![Screenshot](cookie-browser-support.png)
 
-https://www.idp.com
+
+Reference:
+https://caniuse.com/?search=samesite
+
+
+## What does OWASP say about this?
+https://owasp.org/www-community/SameSite
+
+
+
+
 
 
 If you encounter any problems during the setup process, please reach out for assistance.

@@ -20,15 +20,19 @@ app.use(cors({ origin: "https://www.idp.com", credentials: true }));
 app.use(express.json());
 
 const router = express.Router();
+const cookie_opt = { sameSite: 'none', domain:'.backend.com',  maxAge: 24 * 60 * 60 * 1000, httpOnly: true, signed: true, secure: true }
+
 router.get('/set', (req, res) => {
 
     const user = { id: 1, name: "jorge" }
 
-    res.cookie('auth', user, { sameSite: 'none', domain:'.backend.com',  maxAge: 24 * 60 * 60 * 1000, httpOnly: true, signed: true, secure: true }).send({ "cookie": "was set" });
+ 
+    res.cookie('auth', user, cookie_opt ).send({ "cookie": "was set" });
+    console.log('Cookie Setting', cookie_opt)
 
 })
 app.use(router)
 
 app.listen(3000, () => {
-    console.log(`listening`);
+    console.log(`listening`, cookie_opt );
 });

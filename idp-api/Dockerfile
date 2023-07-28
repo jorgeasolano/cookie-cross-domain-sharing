@@ -9,6 +9,7 @@ COPY package*.json ./
 
 # Install npm packages
 RUN npm install
+RUN npm install nodemon -g
 
 # Copy the rest of your app's source code to Docker environment
 COPY . .
@@ -17,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 # Start command
-CMD [ "node", "index.js" ]
+CMD [ "nodemon", "index.js" ]

@@ -34,6 +34,7 @@ We need to configure the local domains in the system's hosts file.
 
 
 
+
 4. Save and close the file.
 
 ## Step 2: Run Docker Compose

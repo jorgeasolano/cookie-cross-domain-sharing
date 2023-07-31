@@ -13,11 +13,12 @@ We need to configure the local domains in the system's hosts file.
 2. Type `sudo nano /etc/hosts` and press `Enter`. You'll be prompted to enter your password.
 3. Add these lines to the end of the file:
 
+```
 127.0.0.1 www.idp.com
 127.0.0.1 www.app.com
 127.0.0.1 idp.backend.com
 127.0.0.1 app.backend.com
-
+```
 
 4. Press `Control + X` to exit, then `Y` to save the changes, and finally `Enter` to confirm.
 
@@ -27,11 +28,12 @@ We need to configure the local domains in the system's hosts file.
 2. Click File -> Open, then navigate to `C:\Windows\System32\Drivers\etc` and select `All Files (*.*)` from the drop-down menu in the lower right corner.
 3. Open the `hosts` file and add these lines at the end:
 
+```
 127.0.0.1 www.idp.com
 127.0.0.1 www.app.com
 127.0.0.1 idp.backend.com
 127.0.0.1 app.backend.com
-
+```
 
 
 
